@@ -578,6 +578,50 @@ github.com/Azure/azure-service-operator/v2/api/apimanagement/v1api20220801storag
 │       ├── State: *string
 │       ├── StateComment: *string
 │       └── Type: *string
+├── User: Resource
+│   ├── Owner: github.com/Azure/azure-service-operator/v2/api/apimanagement/v1api20220801.Service
+│   ├── Spec: Object (13 properties)
+│   │   ├── AppType: *string
+│   │   ├── AzureName: Validated<string> (2 rules)
+│   │   │   ├── Rule 0: MaxLength: 80
+│   │   │   └── Rule 1: MinLength: 1
+│   │   ├── Confirmation: *string
+│   │   ├── Email: *string
+│   │   ├── FirstName: *string
+│   │   ├── Identities: Object (3 properties)[]
+│   │   │   ├── PropertyBag: genruntime.PropertyBag
+│   │   │   ├── Provider: *string
+│   │   │   └── Reference: *genruntime.ResourceReference
+│   │   ├── LastName: *string
+│   │   ├── Note: *string
+│   │   ├── OriginalVersion: string
+│   │   ├── Owner: *genruntime.KnownResourceReference
+│   │   ├── Password: *genruntime.SecretReference
+│   │   ├── PropertyBag: genruntime.PropertyBag
+│   │   └── State: *string
+│   └── Status: Object (13 properties)
+│       ├── Conditions: conditions.Condition[]
+│       ├── Email: *string
+│       ├── FirstName: *string
+│       ├── Groups: Object (6 properties)[]
+│       │   ├── BuiltIn: *bool
+│       │   ├── Description: *string
+│       │   ├── DisplayName: *string
+│       │   ├── ExternalId: *string
+│       │   ├── PropertyBag: genruntime.PropertyBag
+│       │   └── Type: *string
+│       ├── Id: *string
+│       ├── Identities: Object (3 properties)[]
+│       │   ├── Id: *string
+│       │   ├── PropertyBag: genruntime.PropertyBag
+│       │   └── Provider: *string
+│       ├── LastName: *string
+│       ├── Name: *string
+│       ├── Note: *string
+│       ├── PropertyBag: genruntime.PropertyBag
+│       ├── RegistrationDate: *string
+│       ├── State: *string
+│       └── Type: *string
 └── VersionSet: Resource
     ├── Owner: github.com/Azure/azure-service-operator/v2/api/apimanagement/v1api20220801.Service
     ├── Spec: Object (9 properties)

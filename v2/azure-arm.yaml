@@ -763,12 +763,21 @@ objectModelConfiguration:
         $azureGeneratedSecrets:
           - PrimaryKey
           - SecondaryKey
+      Service_User:
+        $exportAs: User
+        $supportedFrom: v2.4.0
       SubscriptionCreateParameterProperties:
         PrimaryKey:
           $isSecret: true
         SecondaryKey:
           $isSecret: true
         OwnerId:
+          $armReference: true
+      UserCreateParameterProperties:
+        Password:
+          $isSecret: true
+      UserIdentityContract:
+        Id:
           $armReference: true
       VirtualNetworkConfiguration:
         SubnetResourceId:

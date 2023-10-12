@@ -32,7 +32,7 @@ func Test_ApiManagement_20220801_CRUD(t *testing.T) {
 	// I recommend you change this line to CreateResourceAndWaitWithoutCleanup. This way
 	// apim will not be deleted until you have finished writing your tests. Also change
 	// the code below when you create the &service
-	tc.CreateResourceAndWait(rg)
+	tc.CreateResourceAndWaitWithoutCleanup(rg)
 
 	// There will be a New v2 SKU released 5/10/2023 which will have a much quicker start up
 	// time. Move to that when it's available (BasicV2 or StandardV2 SKU)
@@ -57,7 +57,7 @@ func Test_ApiManagement_20220801_CRUD(t *testing.T) {
 
 	// APIM takes a long time to provision. When you are authoring tests in this file. I 
 	// recommend you change this line to CreateResourceAndWaitWithoutCleanup.
-	tc.CreateResourcesAndWait(&service)
+	tc.CreateResourceAndWaitWithoutCleanup(&service)
 
 	tc.Expect(service.Status.Id).ToNot(BeNil())
 

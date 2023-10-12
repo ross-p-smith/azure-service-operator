@@ -1299,6 +1299,55 @@ github.com/Azure/azure-service-operator/v2/api/apimanagement/v1api20220801
 │           ├── "rejected"
 │           ├── "submitted"
 │           └── "suspended"
+├── Service_User_STATUS_ARM: Object (4 properties)
+│   ├── Id: *string
+│   ├── Name: *string
+│   ├── Properties: *Object (8 properties)
+│   │   ├── Email: *string
+│   │   ├── FirstName: *string
+│   │   ├── Groups: Object (5 properties)[]
+│   │   │   ├── BuiltIn: *bool
+│   │   │   ├── Description: *string
+│   │   │   ├── DisplayName: *string
+│   │   │   ├── ExternalId: *string
+│   │   │   └── Type: *Enum (3 values)
+│   │   │       ├── "custom"
+│   │   │       ├── "external"
+│   │   │       └── "system"
+│   │   ├── Identities: Object (2 properties)[]
+│   │   │   ├── Id: *string
+│   │   │   └── Provider: *string
+│   │   ├── LastName: *string
+│   │   ├── Note: *string
+│   │   ├── RegistrationDate: *string
+│   │   └── State: *Enum (4 values)
+│   │       ├── "active"
+│   │       ├── "blocked"
+│   │       ├── "deleted"
+│   │       └── "pending"
+│   └── Type: *string
+├── Service_User_Spec_ARM: Object (2 properties)
+│   ├── Name: string
+│   └── Properties: *Object (9 properties)
+│       ├── AppType: *Enum (2 values)
+│       │   ├── "developerPortal"
+│       │   └── "portal"
+│       ├── Confirmation: *Enum (2 values)
+│       │   ├── "invite"
+│       │   └── "signup"
+│       ├── Email: *string
+│       ├── FirstName: *string
+│       ├── Identities: Object (2 properties)[]
+│       │   ├── Id: *string
+│       │   └── Provider: *string
+│       ├── LastName: *string
+│       ├── Note: *string
+│       ├── Password: *string
+│       └── State: *Enum (4 values)
+│           ├── "active"
+│           ├── "blocked"
+│           ├── "deleted"
+│           └── "pending"
 ├── Subscription: Resource
 │   ├── Owner: Service
 │   ├── Spec: Object (10 properties)
@@ -1346,6 +1395,65 @@ github.com/Azure/azure-service-operator/v2/api/apimanagement/v1api20220801
 │       │   ├── "submitted"
 │       │   └── "suspended"
 │       ├── StateComment: *string
+│       └── Type: *string
+├── User: Resource
+│   ├── Owner: Service
+│   ├── Spec: Object (11 properties)
+│   │   ├── AppType: *Enum (2 values)
+│   │   │   ├── "developerPortal"
+│   │   │   └── "portal"
+│   │   ├── AzureName: Validated<string> (2 rules)
+│   │   │   ├── Rule 0: MaxLength: 80
+│   │   │   └── Rule 1: MinLength: 1
+│   │   ├── Confirmation: *Enum (2 values)
+│   │   │   ├── "invite"
+│   │   │   └── "signup"
+│   │   ├── Email: Validated<*string> (2 rules)
+│   │   │   ├── Rule 0: MaxLength: 254
+│   │   │   └── Rule 1: MinLength: 1
+│   │   ├── FirstName: Validated<*string> (2 rules)
+│   │   │   ├── Rule 0: MaxLength: 100
+│   │   │   └── Rule 1: MinLength: 1
+│   │   ├── Identities: Object (2 properties)[]
+│   │   │   ├── Provider: *string
+│   │   │   └── Reference: *genruntime.ResourceReference
+│   │   ├── LastName: Validated<*string> (2 rules)
+│   │   │   ├── Rule 0: MaxLength: 100
+│   │   │   └── Rule 1: MinLength: 1
+│   │   ├── Note: *string
+│   │   ├── Owner: *genruntime.KnownResourceReference
+│   │   ├── Password: *genruntime.SecretReference
+│   │   └── State: *Enum (4 values)
+│   │       ├── "active"
+│   │       ├── "blocked"
+│   │       ├── "deleted"
+│   │       └── "pending"
+│   └── Status: Object (12 properties)
+│       ├── Conditions: conditions.Condition[]
+│       ├── Email: *string
+│       ├── FirstName: *string
+│       ├── Groups: Object (5 properties)[]
+│       │   ├── BuiltIn: *bool
+│       │   ├── Description: *string
+│       │   ├── DisplayName: *string
+│       │   ├── ExternalId: *string
+│       │   └── Type: *Enum (3 values)
+│       │       ├── "custom"
+│       │       ├── "external"
+│       │       └── "system"
+│       ├── Id: *string
+│       ├── Identities: Object (2 properties)[]
+│       │   ├── Id: *string
+│       │   └── Provider: *string
+│       ├── LastName: *string
+│       ├── Name: *string
+│       ├── Note: *string
+│       ├── RegistrationDate: *string
+│       ├── State: *Enum (4 values)
+│       │   ├── "active"
+│       │   ├── "blocked"
+│       │   ├── "deleted"
+│       │   └── "pending"
 │       └── Type: *string
 └── VersionSet: Resource
     ├── Owner: Service
